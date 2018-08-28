@@ -1,7 +1,9 @@
-package com.stanly.wenews;
+package com.stanly.wenews.ui.moudle.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.stanly.wenews.R;
 
 public class MainActivity extends AppCompatActivity {
 

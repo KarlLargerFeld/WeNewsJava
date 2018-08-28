@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WeNews-Java</string>
+
+    <string name="home">首页</string>
+    <string name="video">视频</string>
+    <string name="speak">讲讲</string>
+    <string name="me">我</string>
 </resources>
