@@ -1,0 +1,32 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+
+//添加此语句后，所有moudle中均可引用config.gradle中的变量，而不需在每个gradle文件中加入apply from语句
+subprojects {
+    apply from :"${project.rootDir}/config.gradle"
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
