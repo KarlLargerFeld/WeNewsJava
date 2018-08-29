@@ -1,0 +1,2 @@
+依赖注入相关的类.
+根据dagger2的风格, 一般有module和component模块.

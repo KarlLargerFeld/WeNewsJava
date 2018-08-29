@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion project.ext.compileSdkVersion
@@ -11,6 +12,10 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug{
+            minifyEnabled project.ext.minifyEnabled
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled project.ext.minifyEnabled
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -22,8 +27,31 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "com.android.support:appcompat-v7:$project.ext.support_version"
     implementation "com.android.support:design:$project.ext.support_version"
+
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //https://github.com/orhanobut/logger
+    implementation 'com.orhanobut:logger:2.2.0'
+
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+
+    //https://github.com/Kotlin/anko
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+
+
+    //https://github.com/bumptech/glide
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    //https://github.com/sephiroth74/Material-BottomNavigation
+    implementation 'it.sephiroth.android.library.bottomnavigation:bottom-navigation:2.0.1-rc1'
+
+}
+repositories {
+    mavenCentral()
 }

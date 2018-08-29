@@ -1,0 +1,2 @@
+包含model, api, db, pref, 网络接口实现等.
+其中对外公开一个DataRepository提供业务接口相关数据.
